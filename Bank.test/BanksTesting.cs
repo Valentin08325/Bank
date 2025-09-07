@@ -15,7 +15,7 @@ namespace Bank.test
             // Act
             bank.Deposit(deposit);
             //Assert
-            Assert.AreEqual(initialBalance + deposit, bank.Balance);
+            Assert.That(bank.Balance, Is.EqualTo(initialBalance + deposit));
         }
         [Test]
         public void Deposit_NegativeAmount_ThrowsException()
@@ -36,7 +36,7 @@ namespace Bank.test
             //Act
             bank.Withdraw(withdraw);
             //Assert
-            Assert.AreEqual(initialBalance - withdraw, bank.Balance);
+            Assert.That(bank.Balance, Is.EqualTo(initialBalance - withdraw));
         }
         [Test]
         public void Withdraw_InvalidAmount_ThrowsExcpetion()
